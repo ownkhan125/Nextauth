@@ -1,0 +1,12 @@
+(get value any input and checkbox)
+
+ const handleChange = (e) => {
+        const { id, name, value, type, checked } = e.target;
+        const key = id || name;
+        setData((prevData) => ({
+            ...prevData,
+            [key]: type === 'checkbox' ? checked : value,
+        }));
+    };
+
+(get value any input and checkbox)
