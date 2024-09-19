@@ -1,9 +1,11 @@
 'use client'
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const page = () => {
   const [data, setData] = useState();
+  const router = useRouter();
 
 
   const handleChange = (e) => {
@@ -25,8 +27,9 @@ const page = () => {
         },
         body: JSON.stringify({ data })
       })
-      // const response = await res.json();
-      // console.log(response);
+      if(res.ok){
+        router.push('/login')
+      }
 
     } catch (error) {
       console.log('Signup page:',error?.message);
@@ -75,7 +78,7 @@ const page = () => {
 
               />
             </div>
-            <button className="bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded w-full" >Login</button>
+            <button className="bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded w-full" >Sign Up</button>
           </form>
         </div>
       </div>

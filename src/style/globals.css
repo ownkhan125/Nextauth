@@ -20,8 +20,49 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn {
+  background-color: #5f6164;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #4c4e51;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+
+.form-sign {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
+  margin: auto;
+}
+
+button {
+  width: 100%
+}
+
+.form-sign input {
+  border: 1.5px solid grey;
+  border-radius: 5px;
+  color: #2e4369;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 40px;
+  margin-top: 0px;
+  width: 100%;
+}
+

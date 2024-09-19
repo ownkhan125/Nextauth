@@ -1,5 +1,5 @@
-import localFont from "next/font/local";
 import "../style/globals.css";
+import NextAuthProvider from "@/Providers/NextAuthProvider";
 
 
 export const metadata = {
@@ -11,9 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="container m-auto py-10 px-5">
-          {children}
-        </div>
+        <NextAuthProvider>
+          <div className="container m-auto py-10 px-5">
+            {children}
+          </div>
+        </NextAuthProvider>
       </body>
     </html>
   );
