@@ -14,21 +14,25 @@ const page = () => {
 
 
     const handleSubmitData = async (data) => {
-        console.log("object own");
-            try {
-                await signIn(
-                    'Verify',
-                    {
-                        ...data,
-                        redirect:false
-                    }
-                );
-                router.push('/dashboard')
+        try {
+            const result = await signIn(
+                'Verify',
+                {
+                    ...data,
+                    redirect: false
+                }
+            );
 
-                
-            } catch (error) {
-                console.log('Login page:', error?.message);
+            if (result?.ok) {
+                router.push('/dashboard');
+            } else {
+                router.push('/');
             }
+
+
+        } catch (error) {
+            console.log('Login page:', error?.message);
+        }
 
     }
 
@@ -80,11 +84,10 @@ export default page;
 //     const router = useRouter();
 
 //     const handleLoginFormSubmit = async (data) => {
-
 //         try {
 //             await signIn(
 //                 'Verify',
-                    
+
 //                 {
 //                     ...data,
 //                     redirect: false
