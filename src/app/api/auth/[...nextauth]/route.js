@@ -63,6 +63,7 @@ export const authOptions = {
                 await user.save();
                 return true;
             }
+            return true
         },
     }
 }
