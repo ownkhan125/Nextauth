@@ -21,16 +21,23 @@ body {
 }
 
 .btn {
-  background-color: #5f6164;
-  color: white;
-  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
   width: 100%;
-  padding: 16px;
-  transition: all 0.2s ease-in-out;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #10B981;
+  transition: all 0.2s linear;
 }
 
 .btn:hover {
-  background-color: #4c4e51;
+  background-color: #047857;
 }
 
 @layer utilities {
@@ -65,4 +72,3 @@ button {
   margin-top: 0px;
   width: 100%;
 }
-

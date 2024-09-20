@@ -74,16 +74,18 @@ const page = () => {
                     </button>
                 </div>
 
+                <div className="flex items-center justify-between" >
+                    <button
+                        className="btn"
+                        onClick={handleGoogleSignIn}
+                    >
+                        Login with Google
+                    </button>
+                </div>
+
 
             </form>
-            <div className="flex items-center justify-between" >
-                <button
-                    className="btn"
-                    onClick={handleGoogleSignIn}
-                >
-                    Google Login
-                </button>
-            </div>
+
         </>
     );
 };
