@@ -39,14 +39,13 @@ export const authOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_SECRET,
-
+            allowDangerousEmailAccountLinking : true
         })
     ],
 
     callbacks: {
-        async signIn({ account, profile }) {
+        async signIn({ user , account, profile }) {
             if (account.provider === "google") {
-                console.log(profile);
 
                 await connectDB();
 
@@ -65,6 +64,11 @@ export const authOptions = {
             }
             return true
         },
+    },
+
+    pages : {
+        signIn : '/login',
+        signOut : "/"
     }
 }
 const handler = NextAuth(authOptions);

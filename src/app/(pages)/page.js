@@ -27,24 +27,25 @@ const page = () => {
         },
         body: JSON.stringify({ data })
       })
-      if(res.ok){
+      if (res.ok) {
         router.push('/login')
       }
 
     } catch (error) {
-      console.log('Signup page:',error?.message);
+      console.log('Signup page:', error?.message);
     }
 
   }
   return (
     <>
-      <div className="flex items-center h-screen w-full">
+      <div className="flex items-center  w-full">
         <div className="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
           <span className="block w-full text-xl uppercase font-bold mb-4">Sign up</span>
           <form className="mb-4" onSubmit={sendData} method="POST">
             <div className="mb-4 md:w-full">
               <label className="block text-xs mb-1">Username </label>
               <input
+                required
                 className="w-full border rounded p-2 outline-none focus:shadow-outline"
                 type="text"
                 name="username"
@@ -57,6 +58,7 @@ const page = () => {
             <div className="mb-4 md:w-full">
               <label className="block text-xs mb-1">Email</label>
               <input
+                required
                 className="w-full border rounded p-2 outline-none focus:shadow-outline"
                 type="text"
                 name="email"
@@ -69,6 +71,7 @@ const page = () => {
             <div className="mb-6 md:w-full">
               <label className="block text-xs mb-1">Password</label>
               <input
+                required
                 className="w-full border rounded p-2 outline-none focus:shadow-outline"
                 type="password"
                 name="password"
