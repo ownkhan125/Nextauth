@@ -18,10 +18,10 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     verifiedEmail: {
-        type: Boolean,
+        type: Boolean, 
         required: true
     },
-    role: {
+    role: { 
         type: String,
         enums: ["user , admin"],
         default: "user",

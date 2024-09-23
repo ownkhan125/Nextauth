@@ -59,6 +59,7 @@ export const authOptions = {
                     email: profile.email,
                     password: profile.at_hash
                 })
+                
                 await user.save();
                 return true;
             }
