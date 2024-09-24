@@ -29,7 +29,7 @@ export const authOptions = {
                     }
 
                 } catch (error) {
-                    console.log("catch error", error?.message);
+                    console.log("catch error",error?.message);
                     return null
                 }
             }
@@ -39,12 +39,12 @@ export const authOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_SECRET,
-            allowDangerousEmailAccountLinking: true
+            allowDangerousEmailAccountLinking : true
         })
     ],
 
     callbacks: {
-        async signIn({ user, account, profile }) {
+        async signIn({ user , account, profile }) {
             if (account.provider === "google") {
 
                 await connectDB();
@@ -59,7 +59,7 @@ export const authOptions = {
                     email: profile.email,
                     password: profile.at_hash
                 })
-
+                
                 await user.save();
                 return true;
             }
@@ -67,10 +67,9 @@ export const authOptions = {
         },
     },
 
-    pages: {
-        signIn: '/login',
-        error: '/auth/error',
-        signOut: '/',
+    pages : {
+        signIn : '/login',
+        signOut : "/"
     }
 }
 const handler = NextAuth(authOptions);
