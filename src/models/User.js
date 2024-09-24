@@ -10,23 +10,23 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    profilePicture: {
-        type: String,
-    },
+    // profilePicture: {
+    //     type: String,
+    // },
     password: {
         type: String,
         required: true,
     },
-    verifiedEmail: {
-        type: Boolean, 
-        required: true
-    },
-    role: { 
-        type: String,
-        enums: ["user , admin"],
-        default: "user",
-        required: true
-    }
+    // verifiedEmail: {
+    //     type: Boolean,
+    //     required: true
+    // },
+    // role: {
+    //     type: String,
+    //     enums: ["user , admin"],
+    //     default: "user",
+    //     required: true
+    // }
 });
 
 export const User = mongoose.models.users || mongoose.model('users', UserSchema)

@@ -18,6 +18,6 @@ export const POST = async (req) => {
         await user.save();
         return NextResponse.json(user, { status: 200 })
     } catch (error) {
-        return NextResponse.json({ 'signup route:': error?.message }, { status: 500 })
+        return NextResponse.json(error?.message , { status: 500 })
     }
 }
