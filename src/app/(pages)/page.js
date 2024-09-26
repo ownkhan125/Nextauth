@@ -52,7 +52,6 @@ const page = () => {
                 id="username"
                 onChange={handleChange}
                 placeholder="Username"
-
               />
             </div>
             <div className="mb-4 md:w-full">
